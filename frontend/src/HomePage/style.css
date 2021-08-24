@@ -1,0 +1,38 @@
+.WrapContainer{
+    padding: 15px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url('./fon.svg');
+}
+.MainBlock{
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: rgb(236, 236, 236);
+    width: 75%;
+}
+.SubMenuBlock{
+    height: 400px;
+    border-radius: 45px;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.MainBlockNews{
+    display: grid;
+    padding: 3%;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 5%;
+}
+.image_wrap {
+    width:100%;
+    max-height: 170px;
+    overflow: hidden;
+}
+.imgNew{
+    width: 100%;
+    overflow: hidden;
+}

@@ -1,0 +1,18 @@
+.mainWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Field{
+    width: 80%;
+}
+
+.formforPost{
+    border: 1px black solid;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    
+}

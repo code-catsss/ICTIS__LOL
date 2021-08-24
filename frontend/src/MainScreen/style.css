@@ -1,0 +1,116 @@
+.mainWrap{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url('../media/back_main.png');
+    background-size: 100%;
+}
+
+.mains_head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    flex: 0 0 auto;
+
+
+}
+.but_head{
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45px;
+    border: 2px solid white; 
+    min-width: 25%;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+
+}
+
+.but_main_cont{
+    display: flex;
+    justify-content: space-between;
+    min-width: 35%;
+    
+}
+
+.but_head:hover{
+    background-color: rgba(243, 243, 243, 0.514);
+}
+
+.mains_footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    bottom: 0;
+
+    flex: 0.1  0 auto;
+
+
+}
+
+.mains_footer p{
+    
+    border-top: 1px solid white;
+    width: 200px;
+    color: white;
+}
+
+.mains_footer h1{
+    font-size: 25px;
+    color: white;
+}
+
+.left_side_cont{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+
+
+}
+
+
+.left_side_cont p{
+    color: white;
+    font-size: 25px;
+    width: 200px;
+}
+.left_side_cont button:hover{
+    background-color: rgba(243, 243, 243, 0.514);
+}
+
+.left_side_cont button{
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px;
+    border-radius: 45px;
+    margin-left: 10px;
+    border: 2px solid white; 
+
+    color: white;
+}
+
+.slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    color: white;
+    
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 auto;
+}
+.slideSS{
+    color: white;
+}

@@ -1,0 +1,24 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./fon.svg');
+
+}
+.contentsds{
+    width: 80%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    padding: 1%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.contentsds img{
+    max-width: 70%;
+}
+.ButArticle{
+    display: flex;
+    justify-content: space-between;
+}

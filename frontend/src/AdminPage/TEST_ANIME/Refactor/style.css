@@ -1,0 +1,14 @@
+.CreateForm{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    
+    
+}
+
+.bound_line{
+    display: flex;
+    justify-content: space-evenly;
+}

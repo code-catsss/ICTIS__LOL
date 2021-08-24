@@ -1,0 +1,18 @@
+header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 80px;
+    background-color: rgb(204, 241, 255);
+}
+.main_but_cont{
+    justify-self: flex-end;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,128 @@
+.mainWRap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow:hidden
+}
+.mainWRap:nth-child(n){
+    margin: 1%;
+}
+.teg_quest{
+    text-align: center;
+    align-self: center;
+    border: 5px solid black;
+    padding: 10px;
+    width: 65%;
+    border-radius: 60%;
+    font-size: 200%;
+    background-color: white;
+}
+.teg_quest_select{
+    text-align: center;
+    align-self: center;
+    border: 5px solid black;
+    padding: 10px;
+    width: 65%;
+    border-radius: 60%;
+    font-size: 200%;
+    background-color: rgb(124, 185, 255);
+}
+
+.teg_quest_no_nextx{
+    text-align: center;
+    align-self: center;
+    border: 5px solid black;
+    padding: 10px;
+    width: 65%;
+    border-radius: 60%;
+    font-size: 200%;
+    background-color: rgb(255, 87, 87);
+}
+
+.teg_quest_has_no_next{
+    text-align: center;
+    align-self: center;
+    border: 5px solid black;
+    padding: 10px;
+    width: 65%;
+    border-radius: 60%;
+    font-size: 200%;
+    background: linear-gradient(90deg,rgb(255, 255, 255) 50%, rgb(255, 31, 68) 50%);
+}
+
+.teg_quest:hover{
+    background-color: rgb(221, 221, 221);
+}
+.teg_cont_in{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.teg_cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 100%;
+}
+
+
+.arrow {
+    pointer-events: none;
+  }
+
+  .arrow:hover arrow__path{
+    pointer-events: none;
+    stroke: blue;
+  }
+   
+  .arrow__path {
+    stroke: rgb(109, 233, 255);
+    fill: transparent;
+    stroke-width: 6px;
+    
+  }
+   
+.tree_cont{
+    position: absolute;
+    margin: 3%;
+    border: 5px dashed black;
+    width: 90%;
+    overflow: hidden;
+    height: 530px;
+    background: linear-gradient( #bbb, transparent 1px), linear-gradient( 90deg, #bbb, transparent 1px);
+  background-size: 15px 15px;
+  background-position: center center;
+}
+.modal_but_conteiner{
+    display: flex;
+    align-items: center;
+}
+.toolTipA h3{
+    font-size: 15px;
+    padding: 10px;
+}
+.toolTipA h3:hover{
+    background-color: rgb(136, 136, 136);
+
+}
+.arrow_label{
+    background-color: rgba(255, 255, 255, 0.76);
+    border: 1px solid black;
+}
+.arrow_label:hover{
+    background-color: rgb(168, 168, 168);
+
+}
+.brunches{
+    position: relative;
+    margin-top: 600px;
+}
+.brunch{
+    display: flex;
+}
+.acc_brunch_head{
+    display: flex;
+    width: 100%;
+}

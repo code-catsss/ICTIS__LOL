@@ -1,0 +1,33 @@
+.mainProfilec{
+    margin: 1%;
+    display: flex;
+    justify-content: space-between;
+    background-image: url('./fon.svg');
+}
+.profileData{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(240, 240, 240);
+    border: 2px solid black;
+    border-radius: 35px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 20%;
+}
+.profileData img{
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+
+}
+.profileDataRes{
+    width: 70%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(240, 240, 240);
+    border: 2px solid black;
+    border-radius: 35px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
