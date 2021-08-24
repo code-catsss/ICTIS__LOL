@@ -1,0 +1,36 @@
+{
+  "name": "ICTIS_VISARIUM",
+  "version": "1.0.0",
+  "description": "Если мы не сделаем этот проект нам пизда",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "front": "npm run start --prefix frontend",
+    "explosion": "concurrently \"npm run server\" \"npm run front\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-catsss/ICTIS_VISARIUM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/code-catsss/ICTIS_VISARIUM/issues"
+  },
+  "homepage": "https://github.com/code-catsss/ICTIS_VISARIUM#readme",
+  "dependencies": {
+    "@material-ui/icons": "^4.11.2",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^6.2.0",
+    "disable-scroll": "^0.6.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.2",
+    "nodemon": "^2.0.9",
+    "react-xarrows": "^1.7.2",
+    "recharts": "^2.0.10",
+    "victory": "^35.9.3"
+  }
+}

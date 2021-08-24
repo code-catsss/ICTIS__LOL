@@ -1,2 +1,2 @@
-# ICTIS__LOL
-LOL
+# ICTIS_VISARIUM
+Если мы не сделаем этот проект нам пизда
