@@ -6,7 +6,7 @@ import './style.css'
 import { Link } from 'react-router-dom'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import VisibilityIcon from '@material-ui/icons/Visibility';
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../../context/AuthContext'
 import CreateIcon from '@material-ui/icons/Create';
 
 export const Home = () =>{

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useCallback, useContext, useEffect, useState } from 'react'
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../../context/AuthContext'
 import {Header} from '../Header/index'
 import {Button} from '@material-ui/core'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';

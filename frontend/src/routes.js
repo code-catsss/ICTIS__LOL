@@ -1,13 +1,13 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import {Profile} from './ProfilePage';
-import {Home} from './HomePage';
-import {Auth} from './AuthPage';
-import {NewsRef} from './AdminPage/News/Refactor';
-import {NewsDetail} from './HomePage/NewsDetail'
-import {MainScreen} from './MainScreen/index';
-import { Admin } from './AdminPage';
-import { Test } from './TestPage';
+import {Profile} from './components/ProfilePage';
+import {Home} from './components/HomePage';
+import {Auth} from './components/AuthPage';
+import {NewsRef} from './components/AdminPage/News/Refactor';
+import {NewsDetail} from './components/HomePage/NewsDetail'
+import {MainScreen} from './components/MainScreen/index';
+import { Admin } from './components/AdminPage';
+import { Test } from './components/TestPage';
 
 export const useRoutes = (isLogin, isInAdmin) => {
     if(isLogin){

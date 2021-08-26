@@ -3,7 +3,7 @@ import Header from '../Header'
 import './style.css'
 import {BrowserRouter, Switch, Link, Route} from 'react-router-dom'
 import axios from 'axios'
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../../context/AuthContext'
 import { Button, TextField } from '@material-ui/core'
 
 

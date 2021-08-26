@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import {PageWrapper, HeadText} from './style'
 import './inde.css'
 import { Link } from 'react-router-dom'
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../../context/AuthContext'
 import { Button, withStyles } from '@material-ui/core'
 
 

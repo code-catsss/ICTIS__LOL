@@ -4,7 +4,7 @@ import axios from "axios"
 import { useCallback, useContext, useEffect, useState } from "react"
 import './style.css'
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import { AuthContext } from "../../context/AuthContext"
+import { AuthContext } from "../../../context/AuthContext"
 
 export const NewsDetail = (props) => {
     const {userId} = useContext(AuthContext)
