@@ -4,6 +4,8 @@ import {BrowserRouter, BrowserRouter as Router, Route} from 'react-router-dom'
 import { AuthContext } from './context/AuthContext';
 import { useAuth } from './hooks/authhook';
 import { useRoutes } from './routes';
+import './common/scss/index.scss'
+
 
 const theme = createMuiTheme({
   typography: {

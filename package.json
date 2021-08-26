@@ -31,6 +31,7 @@
     "nodemon": "^2.0.9",
     "react-xarrows": "^1.7.2",
     "recharts": "^2.0.10",
+    "sass": "^1.38.1",
     "victory": "^35.9.3"
   }
 }
