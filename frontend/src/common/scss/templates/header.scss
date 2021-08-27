@@ -1,0 +1,57 @@
+.header{
+    width: 100%;
+    height: 132px;
+    background: #1C2018;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #FFFFFF;
+
+    &__logo{
+        margin-left: 58px;
+        img{
+            width: 113px;
+            height: 104px;
+        }
+    }
+
+    &__menu{
+        z-index: 1;
+        margin-right: 18px;
+        display: flex;
+
+        &_user{
+
+        }
+    }
+    &__button{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        border-right: 0.5px solid #FFFFFF;
+        height: 51px;
+
+        &:last-child{
+            border: none;
+        }
+
+        button{
+            padding-right: 8px;
+            font-family: $fMon;
+            font-size: 24px;
+            font-weight: 300;
+            border: none;
+            background-color: transparent;
+            color: white;
+            box-sizing: content-box;
+
+            &:hover{
+                border-bottom:  0.5px solid #FFFFFF;
+            }
+        }
+
+        img{
+            padding-left: 8px;
+        }
+    }
+}
