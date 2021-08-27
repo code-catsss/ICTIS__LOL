@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 
 
-import sfedu_logo from '../../common/media/header/sfedu-logo.svg'
+import logo from '../../common/media/header/logo.png'
 
 import directions from '../../common/media/header/directions.svg'
 import home from '../../common/media/header/home.svg'
@@ -18,7 +18,7 @@ export const Header = () =>{
                 <div className="outline outline_light"></div>
                 <div className="inline inline_light"></div>
                 <div className="header__logo">
-                    <img src={sfedu_logo} alt="" />
+                    <img src={logo} alt="" />
                 </div>
                 <div className = "header__menu">
 
