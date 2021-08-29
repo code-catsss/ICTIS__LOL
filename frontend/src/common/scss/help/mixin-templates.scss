@@ -4,16 +4,18 @@ $fMon: 'Montserrat', sans-serif;
 //Шаблоны
 
 .container{
+    margin: 0 auto;
     position: relative;
     padding-right: 20px;
     padding-left: 20px;
 
 }
 .outline{
+    pointer-events: none;
     width: calc(100% - 40px);
     height: 100%;
     position: absolute;
-
+    
     &_light{
         border-right: 4px solid #FFFFFF;
         border-left: 4px solid #FFFFFF;
@@ -24,6 +26,7 @@ $fMon: 'Montserrat', sans-serif;
     }
 }
 .inline{
+    pointer-events: none;
     margin-left: 10px;
     width: calc(100% - 60px);
     height: 100%;
