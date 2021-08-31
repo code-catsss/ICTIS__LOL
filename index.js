@@ -12,6 +12,13 @@ app.use('/api/news', require('./routes/news.route'))
 app.use('/api/test', require('./routes/test.route'))
 app.use('/api/directions', require('./routes/directions.route'))
 
+if (process.env.NODE_ENV === "production"){
+    app.use(express.static("build"));
+    app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+    });
+}
+
 async function start(){
     try {
         await mongoose.connect('mongodb+srv://kingofsweets:52868866@cluster0.h3yh8.mongodb.net/VISARIUM?retryWrites=true&w=majority', {
