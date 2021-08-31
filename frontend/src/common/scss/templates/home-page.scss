@@ -1,0 +1,67 @@
+.home{
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    background: #FAF6EF;
+
+    .MuiTypography-body1{
+        font-size: 26px;
+        font-family: $fMon;
+        font-weight: 300;
+        line-height: auto;
+    }
+
+    &__title{
+        text-decoration: underline;
+        width: 100%;
+        text-align: center;
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 110px;
+        padding-right: 110px;
+    }
+    &__news{
+        padding-right: 120px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__article{
+        width: 30%;
+        height: 523px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(84, 149, 224, 0.18) !important;
+        box-shadow: none !important;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        margin-bottom: 40px;
+    }
+    &__article-header{
+        font-family: $fMon ;
+        font-size: 28px ;
+        font-weight: 500 ;
+    }
+    &__article-area{
+        display: flex !important;
+        flex-direction: column;
+        align-items: center !important;
+    }
+    &__article-image{
+        position: relative;
+        width: calc(100% - 30px);
+        height: 191px;
+        overflow: hidden;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        img{
+            position: absolute;
+        }
+    }
+}

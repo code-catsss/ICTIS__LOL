@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 import {Profile} from './components/ProfilePage';
 import {Home} from './components/HomePage';
 import {Auth} from './components/AuthPage';
@@ -10,7 +10,30 @@ import { Admin } from './components/AdminPage';
 import { Test } from './components/TestPage';
 
 export const useRoutes = (isLogin, isInAdmin) => {
-    if(isLogin){
+
+   
+
+    if(!isLogin){
+        console.log(isLogin)
+
+        return(
+            <Switch>
+                <Route path = "/" component = {MainScreen} exact></Route>
+                <Route path = "/auth" component = {Auth}></Route>
+                <Route path = "/registr" component = {Auth}></Route>
+
+                <Redirect from= "/home" to="/auth"/>
+                <Redirect from= "/profile" to="/auth"/>
+                <Redirect from= "/test" to="/auth"/>
+                <Redirect to="/"/>
+                
+                
+                
+            </Switch>
+        )
+        
+        
+    }else{
         if (isInAdmin) {
             return(
                 <Switch>
@@ -21,8 +44,8 @@ export const useRoutes = (isLogin, isInAdmin) => {
                     <Route path = "/test" component = {Test}></Route>
                     <Route path = "/profile" component = {Profile}></Route>
                     <Route path = "/news/:id" component = {NewsDetail}></Route>
-                    
                     <Redirect to="/home"/>
+                    
     
                 </Switch>
             )
@@ -35,27 +58,11 @@ export const useRoutes = (isLogin, isInAdmin) => {
                     <Route path = "/test" component = {Test}></Route>
                     <Route path = "/profile" component = {Profile}></Route>
                     <Route path = "/news/:id" component = {NewsDetail}></Route>
-                    
-                    <Redirect to="/home"/>
+
     
                 </Switch>
             )
             
         }
-        
-    }
-        return(
-            <Switch>
-                <Redirect from= "/home" to="/auth"/>
-                <Redirect from= "/profile" to="/auth"/>
-                <Redirect from= "/test" to="/auth"/>
-                <Route path = "/" component = {MainScreen} exact></Route>
-                <Route path = "/auth" component = {Auth}></Route>
-                <Route path = "/registr" component = {Auth}></Route>
-                <Redirect to="/"/>
-                
-                
-                
-            </Switch>
-        )
+        }
     }

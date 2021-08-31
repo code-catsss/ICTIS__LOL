@@ -2,7 +2,6 @@ import axios from 'axios'
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import {Header} from '../Header'
 import { Card , CardActionArea,CardActions, Button , CardMedia, RadioGroup, FormControlLabel, Radio, Accordion, AccordionSummary, AccordionDetails, IconButton, CardHeader} from '@material-ui/core'
-import './style.css'
 import { Link } from 'react-router-dom'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import VisibilityIcon from '@material-ui/icons/Visibility';
@@ -52,21 +51,27 @@ export const Home = () =>{
         return(
             <div>
                 <Header/>
-                <div className = "WrapContainer">
-                    <div className = "MainBlock">
-                        <h1>Новости</h1>
-                        <div className = "MainBlockNews">
+
+                <div className = "home container">
+
+                    <div className="outline outline_dark"></div>
+                    <div className="inline inline_dark"></div>
+
+                    <h1 className="home__title">Новости</h1>
+
+                    <div className="home__content">
+                        <div className = "home__news">
                         {
                             news.map((item)=>{
                                 return(
-                                <Card>
-                                    <CardHeader subheader={"Опубликовано:" + item.date}>
-                                    </CardHeader>
-                                    <CardActionArea>
-                                        <div className = "image_wrap"><img className= "imgNew" src={item.img} alt="" /></div>
-                                        
-                                        <h2>{item.header}</h2>
-                                        <p>{item.text}</p>
+                                <Card className="home__article" key={news.indexOf(item)}>
+                                    <CardHeader className="home__article-subheader" subheader={"Опубликовано:" + item.date}></CardHeader>
+                                    <CardActionArea className="home__article-area">
+                                        <div className= "home__article-image">
+                                            <img src={item.img} alt="" />
+                                        </div>
+                                        <h2 className="home__article-header">{item.header}</h2>
+                                        <p className="home__article-info">{item.text}</p>
                                     </CardActionArea>
                                     <CardActions>
                                             <FavoriteIcon color = {item.isliked ? "secondary": "disabled"}/>
@@ -89,8 +94,8 @@ export const Home = () =>{
                             })
                         }
                         </div>
-                        
-                    </div>
+                    
+
                     <div className = "SubMenuBlock">
                         <h3>Рассширенный поиск:</h3>
                         <Accordion>
@@ -122,6 +127,7 @@ export const Home = () =>{
                         </Accordion>
                         
 
+                    </div>
                     </div>
                 </div>
             </div>

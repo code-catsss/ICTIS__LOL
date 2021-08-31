@@ -14,16 +14,14 @@ import profile from '../../common/media/header/profile.svg'
 export const Header = () =>{
     const {login,logout, rolek} = useContext(AuthContext)
         return(
-            <header class="header container">
+            <header className="header container">
                 <div className="outline outline_light"></div>
                 <div className="inline inline_light"></div>
                 <div className="header__logo">
                     <img src={logo} alt="" />
                 </div>
-                <div className = "header__menu">
-
-                    <div className = "header__menu header__menu_user">
-                        <Link className="header__button">
+                    <div className = "header__menu">
+                        <Link to="directions" className="header__button">
                             <img src={directions} alt="" />
                             <button>Направления</button>
                         </Link>
@@ -39,14 +37,10 @@ export const Header = () =>{
                             <img src={home} alt="" />
                             <button>Главная</button>
                         </Link>
-
+                    {rolek === 1 ? <Link to="/admin/users" className="header__button"><button >Админ</button></Link>: null}
+                    <div className="header__button"><button  onClick = {logout}>Выйти</button></div>
                     </div>
-                    {/* <div>
-                    {rolek === 1 ? <Link to="/admin/users"><Button variant = "contained" color = "default">Админ</Button></Link>: null}
-                    <Button className = "leave" variant = "contained" color = "secondary" onClick = {logout}>Ливнуть</Button>
-                    </div> */}
 
-                </div>
             </header>
         )
 }
