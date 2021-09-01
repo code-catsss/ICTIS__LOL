@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/code-catsss/ICTIS_VISARIUM/issues"
   },
-  "homepage": "https://github.com/code-catsss/ICTIS_VISARIUM#readme",
+  "homepage": ".",
   "dependencies": {
     "@material-ui/icons": "^4.11.2",
     "bcryptjs": "^2.4.3",
