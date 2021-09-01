@@ -11,7 +11,7 @@ app.use('/api/profile', require('./routes/profile.route'))
 app.use('/api/news', require('./routes/news.route'))
 app.use('/api/test', require('./routes/test.route'))
 app.use('/api/directions', require('./routes/directions.route'))
-
+//enable static
 app.use(express.static("frontend/build"));
 
 app.get("*", (req, res) => {
