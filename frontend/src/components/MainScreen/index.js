@@ -1,28 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import './style.css'
-
-import {MainCarousel, CardSlide, CardHeader} from './style'
-import { Button, Card, CardActionArea, CardContent, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import SFEDU_ICTIS from './SFEDU_ICTIS.png'
 import axios from 'axios';
 export const  MainScreen = () =>{
     const [news, setNews] = useState([])
-      const images =  [
-            {
-                src: 'https://s0.rbk.ru/v6_top_pics/media/img/0/36/755843385793360.jpeg'
-            },
-            {
-                src: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/SFedU.jpg'
-            },
-            {
-                src: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/SFedU.jpg'
-            },
-            {
-                src: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/SFedU.jpg'
-            },
-           
-        ]
     
 
     const getNews = useCallback(async () =>{
@@ -60,15 +41,13 @@ export const  MainScreen = () =>{
                 </div>
                 <div className="content">
                     <div className="left_side_cont">
-                        <Typography variant="h1" >
                         <p align = "center">Никогда не поздно стать тем человеком, быть которым вы всегда мечтали...</p>
-                        </Typography>
-                        <Typography variant="button" ><Link to="/test"><button>Начать тестирование</button></Link></Typography>
+                        <Link to="/test"><button>Начать тестирование</button></Link>
                         
 
                     </div>
                     <div className="slider">
-                        <MainCarousel>
+                        {/* <MainCarousel>
                             {
                                 news.map((i) => (
                                     <CardSlide src={i.img}>
@@ -81,27 +60,19 @@ export const  MainScreen = () =>{
                                     </CardSlide>
                                 ))
                             }
-                        </MainCarousel>
+                        </MainCarousel> */}
                     </div>
                 </div>
 
 
                 <div className= 'mains_footer'>
-                <Typography variant="h2" >
                     <p>Центр тестирования
                         Конфиденциальность</p>
-                        </Typography>
-                        <Typography variant="h2" >
                     <p>Текст от балды
                         Второй текст от балды.</p>
-                        </Typography>
-                        <Typography variant="h2" >
                     <p>Во дворе трава
                        На траве дрова</p>
-                    </Typography>
-                    <Typography variant="h2" >
                     <h1>8(800)-555-35-35</h1>
-                </Typography>
                 </div>
 
             </div>
