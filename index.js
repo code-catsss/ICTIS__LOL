@@ -12,19 +12,11 @@ app.use('/api/news', require('./routes/news.route'))
 app.use('/api/test', require('./routes/test.route'))
 app.use('/api/directions', require('./routes/directions.route'))
 
-// if (process.env.NODE_ENV === "production"){
-//     app.use(express.static("frontend/public"));
-//     app.get("*", (req, res) => {
-//       res.sendFile(path.resolve(__dirname,"frontend" , "public", "index.html"));
-//     });
-// }
+app.use(express.static("frontend/build"));
 
-
-app.use(express.static(__dirname)); //here is important thing - no static directory, because all static :)
-
-app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname,"frontend" , "build", "index.html"));
+  });
 
 
 async function start(){
