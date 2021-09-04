@@ -1,6 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import SFEDU_ICTIS from './SFEDU_ICTIS.png'
+
+
+
 import axios from 'axios';
 export const  MainScreen = () =>{
     const [news, setNews] = useState([])
@@ -30,23 +34,21 @@ export const  MainScreen = () =>{
 
 
         return(
-            <div className = 'mainWrap'>
-                <div className='mains_head'>
-                    <img src={SFEDU_ICTIS} alt="" height="60%"/>
-                    <div className="but_main_cont">
-                        <Link to = "/home" className="but_head">Портал</Link>
-                        <Link to = "/profile" className="but_head">Личный кабинет</Link>
-                        <Link to = "/profile" className="but_head">RUS/ENG</Link>
+            <div className = 'landing'>
+                <div className='landing__header'>
+                    <img className='landing__logo' src={SFEDU_ICTIS} alt=""/>
+                    <div className="landing__menu">
+                        <Link to = "/home" className="landing__link">Портал</Link>
+                        <Link to = "/profile" className="landing__link">Личный кабинет</Link>
+                        <Link to = "/profile" className="landing__link">RUS/ENG</Link>
                     </div>
                 </div>
-                <div className="content">
-                    <div className="left_side_cont">
-                        <p align = "center">Никогда не поздно стать тем человеком, быть которым вы всегда мечтали...</p>
-                        <Link to="/test"><button>Начать тестирование</button></Link>
-                        
-
+                <div className="landing__content">
+                    <div className="landing__test">
+                        <p>Никогда не поздно стать тем человеком, быть которым вы всегда мечтали...</p>
+                        <Link to="/test"><button className="landing__link">Начать тестирование</button></Link>
                     </div>
-                    <div className="slider">
+                    <div className="landing__news">
                         {/* <MainCarousel>
                             {
                                 news.map((i) => (
@@ -65,7 +67,7 @@ export const  MainScreen = () =>{
                 </div>
 
 
-                <div className= 'mains_footer'>
+                <div className= 'landing__footer'>
                     <p>Центр тестирования
                         Конфиденциальность</p>
                     <p>Текст от балды
