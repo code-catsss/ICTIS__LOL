@@ -1,0 +1,43 @@
+.auth{
+    display: flex;
+    justify-content: center;
+    &__form{
+        text-align: center;
+        margin-top: 79px;
+        padding-left: 77px;
+        padding-right: 77px;
+        padding-top: 55px;
+        padding-bottom: 69px;
+        background: rgba(84, 149, 224, 0.31);
+        width: 900px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title{
+        font-family: $fMon;
+        font-size: 55px;
+        font-weight: 300;
+    }
+    .MuiInputBase-input{
+        font-family: $fMon;
+        font-size: 27px;
+    }
+    .MuiButton-containedPrimary{
+        background: #1C2018 !important;
+        height: 60px !important;
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+    .MuiButton-root{
+        font-family: $fMon;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 26px;
+    }
+    &__link{
+        color: black;
+        font-family: $fMon;
+        font-size: 20px;
+        font-weight: 300;
+    }
+}

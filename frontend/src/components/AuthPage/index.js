@@ -1,6 +1,5 @@
 import React, {useContext, useState} from 'react'
-import Header from '../Header'
-import './style.css'
+import {Header} from '../Header'
 import {Switch, Link, Route} from 'react-router-dom'
 import axios from 'axios'
 import { AuthContext } from '../../context/AuthContext'
@@ -127,33 +126,46 @@ export const Auth = () =>{
     }
 
         return(
+            <div>
+                <Header></Header>
                 <Switch>
                     <Route path = "/registr" >
                     <React.Fragment>
-                    <div className = "form">
-                        <h1>Регистрация</h1>
-                        <TextField label="ФИО*" type="text" name = "name" autoFocus={true} onChange={ChangeDate} />
-                        <TextField label="Текущая Кафедра" type="text" name = "kafedr" autoFocus={true} onChange={ChangeDate} />
-                        <TextField label="Номер учебной группы" type="text" name = "group" onChange={ChangeDate}/>
+                    <div className = "auth container">
 
-                        {emailvalid ? <TextField label="Электронная почта*" type="text" name = "email" onChange={ChangeDate}/>
-                        : <TextField error label={formErrors.email} type="text" name = "email" onChange={ChangeDate}/>}
+                        <div className="outline outline_dark"></div>
+                        <div className="inline inline_dark"></div>
+                    
+                    <div className = "auth__form">
+                        <h1 className = "auth__title">Регистрация</h1>
+                        <TextField className = "auth__input" label="ФИО*" type="text" name = "name" autoFocus={true} onChange={ChangeDate} />
+                        <TextField className = "auth__input" label="Текущая Кафедра" type="text" name = "kafedr" autoFocus={true} onChange={ChangeDate} />
+                        <TextField className = "auth__input" label="Номер учебной группы" type="text" name = "group" onChange={ChangeDate}/>
 
-                        {passwordvalid ? <TextField label="Пароль*" type="text" name = "password" onChange={ChangeDate}/>
-                        : <TextField error label={formErrors.password} type="text" name = "password" onChange={ChangeDate}/>}
+                        {emailvalid ? <TextField className = "auth__input" label="Электронная почта*" type="text" name = "email" onChange={ChangeDate}/>
+                        : <TextField className = "auth__input" error label={formErrors.email} type="text" name = "email" onChange={ChangeDate}/>}
 
-                        <Button variant="contained" color="primary" onClick= {RegisterDate}>Зарегестрироваться</Button>
-                        <Link to = "/auth" onClick= {()=>{
+                        {passwordvalid ? <TextField className = "auth__input" label="Пароль*" type="text" name = "password" onChange={ChangeDate}/>
+                        : <TextField className = "auth__input" error label={formErrors.password} type="text" name = "password" onChange={ChangeDate}/>}
+
+                        <Button className = "auth__submit" variant="contained" color="primary" onClick= {RegisterDate}>Зарегестрироваться</Button>
+                        <Link className = "auth__link" to = "/auth" onClick= {()=>{
                             setemailvalid(true)
                             setpasswordvalid(true)
                         }}>Уже есть аккаунт?</Link>
-                        <Link to = "/">Вернуться на главную</Link>
+                        <Link className = "auth__link" to = "/">Вернуться на главную</Link>
+                    </div>
                     </div>
                     </React.Fragment>
                     </Route>
                     <Route path = "/auth">
-                    <div className = "form">
-                        <h1>Авторизация</h1>
+                    <div className = "auth container">
+
+                        <div className="outline outline_dark"></div>
+                        <div className="inline inline_dark"></div>
+
+                    <div className = "auth__form">
+                        <h1  className = "auth__title">Авторизация</h1>
                         {emailvalid ? <TextField label="Почта" type="text" name = "email" onChange={ChangeDate}/>
                         : <TextField error label={formErrors.email} type="text" name = "email" onChange={ChangeDate}/>}
                         
@@ -162,14 +174,16 @@ export const Auth = () =>{
                         
                         
                         <Button variant="contained" color="primary" onClick= {LogHandler}>Авторизироваться</Button>
-                        <Link to = "/registr" onClick= {()=>{
+                        <Link className = "auth__link" to = "/registr" onClick= {()=>{
                             setemailvalid(true)
                             setpasswordvalid(true)
                         }}>В первые на этом портале?</Link>
-                        <Link to = "/">Вернуться на главную</Link>
+                        <Link className = "auth__link" to = "/">Вернуться на главную</Link>
+                    </div>
                     </div>
                     </Route>
+                    
                 </Switch>
-        
+        </div>
         )
     }
