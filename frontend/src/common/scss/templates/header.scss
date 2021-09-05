@@ -7,6 +7,16 @@
     align-items: center;
     border-bottom: 2px solid #FFFFFF;
 
+    .MuiSvgIcon-root{
+        color: white ;
+        width: 40px;
+        height: 40px;
+    }
+
+    &__button-mobile{
+        display: none !important;
+    }
+
     &__logo{
         margin-left: 58px;
         img{
@@ -53,6 +63,9 @@
     }
 
     @include mobile-only{
+        &__button-mobile{
+            display: block !important;
+        }
         &__logo{
             margin-left: 0;
         }

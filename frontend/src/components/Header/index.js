@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 import logo from '../../common/media/header/logo.png'
@@ -9,14 +10,18 @@ import directions from '../../common/media/header/directions.svg'
 import home from '../../common/media/header/home.svg'
 import test from '../../common/media/header/test.svg'
 import profile from '../../common/media/header/profile.svg'
+import { IconButton, Menu, MenuItem } from '@material-ui/core';
 
 
 export const Header = () =>{
     const {login,logout, rolek} = useContext(AuthContext)
+    const [menu, setmenu] = useState(null)
         return(
             <header className="header container">
+
                 <div className="outline outline_light"></div>
                 <div className="inline inline_light"></div>
+
                 <div className="header__logo">
                     <img src={logo} alt="" />
                 </div>
@@ -40,6 +45,37 @@ export const Header = () =>{
                     {rolek === 1 ? <Link to="/admin/users" className="header__button"><button >Админ</button></Link>: null}
                     <div className="header__button"><button  onClick = {logout}>Выйти</button></div>
                     </div>
+
+                    <IconButton className="header__button-mobile" onClick={(event) => setmenu(event.currentTarget)} size="large" aria-controls="fade-menu" aria-haspopup="true">
+                        <MenuIcon />
+                    </IconButton>
+                    <Menu
+                        keepMounted
+                        open={Boolean(menu)}
+                        anchorEl={menu}
+                        onClose={() => setmenu(null)}
+                    >
+                        <MenuItem>
+                        <Link to="directions" className="header__button">
+                            Направления
+                        </Link>
+                        </MenuItem>
+                        <MenuItem>
+                        <Link to = "/test" className="header__button">
+                            Тестирование
+                        </Link>
+                        </MenuItem>
+                        <MenuItem>
+                        <Link to = "/profile" className="header__button">
+                            Личный кабинет
+                        </Link>
+                        </MenuItem>
+                        <MenuItem>
+                        <Link to = "/home" className="header__button">
+                            Главная
+                        </Link>
+                        </MenuItem>
+                     </Menu>
 
             </header>
         )
