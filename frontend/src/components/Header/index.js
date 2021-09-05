@@ -43,7 +43,7 @@ export const Header = () =>{
                             <button>Главная</button>
                         </Link>
                     {rolek === 1 ? <Link to="/admin/users" className="header__button"><button >Админ</button></Link>: null}
-                    {login === true ? <div className="header__button"><button  onClick = {logout}>Выйти</button></div> : null}
+                    {login ? <div className="header__button"><button  onClick = {logout}>Выйти</button></div> : null}
                     </div>
 
                     <IconButton className="header__button-mobile" onClick={(event) => setmenu(event.currentTarget)} size="large" aria-controls="fade-menu" aria-haspopup="true">
@@ -76,7 +76,7 @@ export const Header = () =>{
                         </Link>
                         </MenuItem>
                         {rolek === 1 ? <MenuItem><Link to="/admin/users" className="header__button">Админ</Link></MenuItem>: null}
-                        {login === true ? <MenuItem onClick = {logout}>Выйти</MenuItem> : null}
+                        {login ? <MenuItem onClick = {logout}>Выйти</MenuItem> : null}
                      </Menu>
 
             </header>
