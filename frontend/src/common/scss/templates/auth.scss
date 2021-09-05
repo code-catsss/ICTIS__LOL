@@ -1,6 +1,6 @@
 .auth{
     display: flex;
-    justify-content: center;
+
     &__form{
         text-align: center;
         margin-top: 79px;
@@ -39,5 +39,29 @@
         font-family: $fMon;
         font-size: 20px;
         font-weight: 300;
+    }
+
+
+    @include mobile-only{
+        &__form{
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 100%;
+        }
+        &__title{
+            font-size: 35px;
+        }
+        .MuiInputBase-input{
+            font-family: $fMon;
+            font-size: 22px;
+        }
+        .MuiButton-containedPrimary{
+            height: 30px !important;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .MuiButton-root{
+            font-size: 18px;
+        }
     }
 }

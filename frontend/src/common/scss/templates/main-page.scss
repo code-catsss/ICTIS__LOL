@@ -144,4 +144,53 @@
         }
     }
 
+    @include medium-desktop{
+        &__header{
+            padding-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 120px;
+            padding-right: 70px;
+        }
+        &__logo{
+            height: 90px;
+        }
+        &__link{
+            padding-left: 15px;
+            padding-right: 15px;
+            max-height: 40px;
+            line-height: auto;
+            margin-left: 20px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        &__content{
+            height: 453px;
+            padding-left: 100px;
+            padding-right: 27px;
+            margin-top: 90;
+        }
+        &__test{
+            width: 450px;
+            p{
+                font-size: 30px;
+            }
+        }
+        &__news{
+            width: 900px;
+        }
+        &__footer{
+            padding-top: 35px;
+            padding-left: 90px;
+            padding-right: 90px;
+            p{
+                font-size: 18px;
+            }
+            h1{
+                font-size: 24px;
+            }
+
+        }
+    }
+
 }

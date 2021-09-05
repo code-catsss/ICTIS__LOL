@@ -64,4 +64,34 @@
             position: absolute;
         }
     }
+
+    @include mobile-only{
+        &__content{
+            flex-direction: column-reverse;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: 30px;
+        }
+        &__news{
+            margin-top: 40px;
+            padding-right: 0px;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+        &__article{
+            width: 100%;
+            height: 500px;
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(84, 149, 224, 0.18) !important;
+            box-shadow: none !important;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+    }
 }

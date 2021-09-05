@@ -10,7 +10,6 @@
         justify-content: space-between;
     }
     &__header{
-        
         display: flex;
     }
     &__avatar{
@@ -67,6 +66,45 @@
 
         padding-right: 114px;
         padding-left: 114px;
+    }
+
+
+    @include mobile-only{
+        &__main{
+            padding-top: 40px;
+            padding-right: 20px;
+            padding-left: 20px;
+    
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        &__header{
+            flex-direction: column-reverse;
+            align-items: center;
+            width: 100%;
+        }
+        &__avatar{
+            width: 100%;
+            min-width: auto;
+            height: 300px;
+        }
+        &__name{
+            max-width: auto;
+        }
+        &__directions{
+            width: 100%;
+            margin-top: 30px;
+        }
+        &__more-button{
+            margin-top: 40px;
+            width: 100%;
+            height: auto;
+        }
+        &__best{
+            margin-top: 40px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
     }
 
 }

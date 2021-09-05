@@ -58,6 +58,11 @@ $fMon: 'Montserrat', sans-serif;
         border-right: 4px solid #1C2018;
         border-left: 4px solid #1C2018;
     }
+
+    
+    @include mobile-only{
+        display: none;
+    }
 }
 .inline{
     pointer-events: none;
@@ -73,6 +78,11 @@ $fMon: 'Montserrat', sans-serif;
     &_dark{
         border-right: 4px dashed #1C2018;
         border-left: 4px dashed #1C2018;
+    }
+
+
+    @include mobile-only{
+        display: none;
     }
 }
 

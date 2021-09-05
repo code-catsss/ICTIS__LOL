@@ -51,4 +51,38 @@
             padding-left: 8px;
         }
     }
+
+    @include mobile-only{
+        &__logo{
+            margin-left: 0;
+        }
+        &__menu{
+            display: none;
+        }
+
+    }
+
+
+    @include medium-desktop{
+        height: 90px;   
+
+        &__logo{
+            img{
+                width: 83px;
+                height: 74px;
+            }
+        }
+
+        &__button{
+            height: 31px;
+    
+            button{
+                font-size: 18px;
+            }
+            img{
+                height: 25px;
+            }
+        }
+
+    }
 }
