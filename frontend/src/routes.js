@@ -58,7 +58,7 @@ export const useRoutes = (isLogin, isInAdmin) => {
                     <Route path = "/test" component = {Test}></Route>
                     <Route path = "/profile" component = {Profile}></Route>
                     <Route path = "/news/:id" component = {NewsDetail}></Route>
-
+                    <Redirect to="/home"/>
     
                 </Switch>
             )
