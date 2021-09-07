@@ -7,6 +7,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { AuthContext } from '../../context/AuthContext'
 import CreateIcon from '@material-ui/icons/Create';
+import { Footer } from '../Footer'
 
 export const Home = () =>{
     const [news, setNews] = useState([])
@@ -130,6 +131,8 @@ export const Home = () =>{
                     </div>
                     </div>
                 </div>
+
+                <Footer />
             </div>
             
         )

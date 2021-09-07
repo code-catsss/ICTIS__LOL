@@ -2,7 +2,6 @@ import { Button, FormControl, FormLabel, RadioGroup,Radio, FormControlLabel } fr
 import { useCallback, useEffect, useState } from "react";
 import { Header } from "../Header"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import './style.css'
 import axios from "axios";
 import { Link } from "react-router-dom";
 

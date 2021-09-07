@@ -43,21 +43,34 @@
         background: rgba(84, 149, 224, 0.31);
         width: 849px;
         height: 488px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            width: 80%;
+        }
     }
     &__more-button{
-        margin-top: 15px;
-        width: 434.74px;
-        height: 120px;
+        margin-top: 15px !important;
+        width: 434.74px !important;
+        height: 120px !important;
 
-        border: none;
+        border: none !important;
 
-        color: white;
-        font-family: $fMon;
-        font-weight: 500;
-        font-size: 24px;
-        text-align: center;
+        color: white !important;
+        font-family: $fMon !important;
+        font-weight: 500 !important;
+        font-size: 24px !important;
+        text-align: center !important;
 
-        background: #1C2018;
+        background: #1C2018 !important;
+
+        &:hover{
+            background: #b6b6b6 !important;
+            color: #1C2018 !important;;
+        }
     }
     &__best{
         font-family: $fMon;
@@ -66,6 +79,50 @@
 
         padding-right: 114px;
         padding-left: 114px;
+    }
+
+    &__chart{
+        margin-top: 60px;
+
+        padding-right: 114px;
+        padding-left: 114px;
+        height: 450px;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    @include medium-desktop{
+        &__main{
+            padding-right: 90px;
+            padding-left: 90px;
+        }
+        &__name{
+            font-size: 20px;
+    
+            max-width: 240px;
+            text-align: center;
+        }
+        &__common{
+            font-size: 20px;
+        }
+        &__directions{
+            background: rgba(84, 149, 224, 0.31);
+            width: 749px;
+            height: 388px;
+        }
+        &__more-button{
+            margin-top: 15px !important;
+            width: 394.74px !important;
+            height: 80px !important;
+            font-size: 20px !important;
+        }
+        &__best{
+            font-size: 20px;
+    
+            padding-right: 90px;
+            padding-left: 90px;
+        }
     }
 
 
@@ -96,14 +153,18 @@
             margin-top: 30px;
         }
         &__more-button{
-            margin-top: 40px;
-            width: 100%;
-            height: auto;
+            margin-top: 40px !important;
+            width: 100% !important;
+            height: auto !important;
         }
         &__best{
             margin-top: 40px;
             padding-right: 20px;
             padding-left: 20px;
+            
+        }
+        &__chart{
+            padding: 0;
         }
     }
 

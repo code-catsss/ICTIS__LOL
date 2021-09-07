@@ -4,6 +4,7 @@ import {Switch, Link, Route} from 'react-router-dom'
 import axios from 'axios'
 import { AuthContext } from '../../context/AuthContext'
 import { Button, TextField } from '@material-ui/core'
+import { Footer } from '../Footer'
 
 
 export const Auth = () =>{
@@ -184,6 +185,7 @@ export const Auth = () =>{
                     </Route>
                     
                 </Switch>
+            <Footer />
         </div>
         )
     }
