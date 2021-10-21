@@ -8,6 +8,8 @@ import {NewsDetail} from './components/HomePage/NewsDetail'
 import {MainScreen} from './components/MainScreen/index';
 import { Admin } from './components/AdminPage';
 import { Test } from './components/TestPage';
+import {Directions} from './components/DirectionsPage/index';
+import {DirectionsDetail} from "./components/DirectionsPage/DiractionsDetail";
 
 export const useRoutes = (isLogin, isInAdmin) => {
 
@@ -21,11 +23,9 @@ export const useRoutes = (isLogin, isInAdmin) => {
                 <Route path = "/" component = {MainScreen} exact></Route>
                 <Route path = "/auth" component = {Auth}></Route>
                 <Route path = "/registr" component = {Auth}></Route>
-
                 <Redirect from= "/home" to="/auth"/>
                 <Redirect from= "/profile" to="/auth"/>
                 <Redirect from= "/test" to="/auth"/>
-                <Redirect to="/"/>
                 
                 
                 
@@ -44,6 +44,8 @@ export const useRoutes = (isLogin, isInAdmin) => {
                     <Route path = "/test" component = {Test}></Route>
                     <Route path = "/profile" component = {Profile}></Route>
                     <Route path = "/news/:id" component = {NewsDetail}></Route>
+                    <Route path ="/directions" component={Directions}></Route>
+                    <Route path ="/direction/:id" component={DirectionsDetail}></Route>
                     <Redirect to="/home"/>
                     
     
@@ -58,6 +60,8 @@ export const useRoutes = (isLogin, isInAdmin) => {
                     <Route path = "/test" component = {Test}></Route>
                     <Route path = "/profile" component = {Profile}></Route>
                     <Route path = "/news/:id" component = {NewsDetail}></Route>
+                    <Route path ="/directions" component={Directions}></Route>
+                    <Route path ="/direction/:id" component={DirectionsDetail}></Route>
                     <Redirect to="/home"/>
     
                 </Switch>

@@ -1,0 +1,90 @@
+.direction{
+    &__name {
+        h1 {
+            padding-top: 77px;
+            padding-left: 135px;
+            margin-bottom: 95px;
+        }
+    }
+    &__table{
+        display: flex;
+        justify-content: center;
+        table{
+            width: 85%;
+            border-collapse:collapse;
+            border-spacing:0
+        }
+        td, th{
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 27px;
+            letter-spacing: 0em;
+            text-align: center;
+
+            text-align: center;
+            border: 2px solid black;
+            background: linear-gradient(180deg,
+                    rgba(74, 82, 255, 0.2257) 99.99%,
+                    rgba(0, 0, 0, 0) 100%);
+            padding: 3px;
+        }
+
+        .column{
+            &__code{
+                width: 5.7%;
+            }
+            &__name{
+                width: 9.9%;
+            }
+            &__places{
+                width:5%;
+            }
+            &__program{
+                width: 10.41%;
+            }
+            &__location{
+                width: 9.375%;
+            }
+            &__exam{
+                width: 17.2%;
+            }
+            &__form{
+                width: 12.5%;
+            }
+            &__pay{
+                width: 11.45%;
+            }
+
+        }
+    }
+
+    &__toBack{
+        .back-button{
+            display: flex;
+            flex-direction: row;
+            margin-top: 77px;
+            margin-left: 140px;
+            padding-bottom: 95px;
+        }
+        button{
+            color: black;
+            text-decoration-line: underline;
+            text-decoration-skip-ink: none;
+            background: white;
+            font-size: 31px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 44px;
+            letter-spacing: 0em;
+            text-align: center;
+            border: none;
+        }
+        img{
+            margin-top: 15px;
+            height: 20px;
+        }
+    }
+
+}
+

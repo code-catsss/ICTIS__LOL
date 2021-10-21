@@ -1,15 +1,14 @@
 const {Router} = require('express')
 const Direction = require('../models/Directions')
+const User = require("../models/User");
+const News = require("../models/News");
 
 const router = Router()
 
 
 router.get('/all', async (req,res) => {
     try {
-        
-
         const dir = await Direction.find({})
-
         res.json(dir)
 
     } catch (error) {
@@ -33,4 +32,14 @@ router.post('/add', async (req,res) => {
     }
 })
 
+router.get('/detail', async (req,res) =>{
+    try {
+
+        const {DirectionId} = req.query
+        const thisdirection = await Direction.findOne({_id: DirectionId})
+        res.json(thisdirection)
+    } catch (error) {
+        res.json('not found')
+    }
+})
 module.exports = router
