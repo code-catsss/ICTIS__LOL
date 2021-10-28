@@ -19,6 +19,14 @@ export const Auth = () =>{
         email: '',
         password: '',
     })
+
+    const [formRegErrors, setFormRegErrors] = useState({
+        name: '',
+        email: '',
+        password: '',
+        kafedr: '',
+        group: '',
+    })
     const { login } = useContext(AuthContext)
     
     
@@ -52,7 +60,39 @@ export const Auth = () =>{
     }
 
     const TestResgisterForVaalidation = () =>{
-        
+        let error = false
+        const new_form = {
+            name: '',
+            email: '',
+            password: '',
+            kafedr: '',
+            group: '',
+        }
+
+        if(form.name.length === 0) {
+            error = true
+            new_form.name = 'Это обязательное поле'
+        }
+        if(form.kafedr.length === 0) {
+            error = true
+            new_form.kafedr = 'Это обязательное поле'
+        }
+        if(form.group.length === 0) {
+            error = true
+            new_form.group = 'Это обязательное поле'
+        }
+        if(form.email.length === 0) {
+            error = true
+            new_form.email = 'Это обязательное поле'
+        }
+        if(form.password.length === 0) {
+            error = true
+            new_form.password = 'Это обязательное поле'
+        }
+
+        setFormRegErrors(new_form)
+        if (error) return false
+        else return true
     }
 
     const LogHandler = async () => {
@@ -118,15 +158,21 @@ export const Auth = () =>{
                     
                     <div className = "auth__form">
                         <h1 className = "auth__title">Регистрация</h1>
-                        <TextField className = "auth__input" label="ФИО*" type="text" name = "name" autoFocus={true} onChange={ChangeDate} />
-                        <TextField className = "auth__input" label="Текущая Кафедра" type="text" name = "kafedr" autoFocus={true} onChange={ChangeDate} />
-                        <TextField className = "auth__input" label="Учебная группа" type="text" name = "group" onChange={ChangeDate}/>
+
+                        {formRegErrors.name.length === 0 ? <TextField className = "auth__input" label="ФИО*" type="text" name = "name" autoFocus={true} onChange={ChangeDate} />
+                        : <TextField className = "auth__input" error label={formRegErrors.name} type="text" name = "email" onChange={ChangeDate}/>}
+
+                        {formErrors.kafedr.length === 0 ? <TextField className = "auth__input" label="Текущая Кафедра*" type="text" name = "kafedr" autoFocus={true} onChange={ChangeDate} />
+                        : <TextField className = "auth__input" error label={formRegErrors.kafedr} type="text" name = "email" onChange={ChangeDate}/>}
+
+                        {formErrors.group.length === 0 ? <TextField className = "auth__input" label="Учебная группа*" type="text" name = "group" onChange={ChangeDate}/>
+                        : <TextField className = "auth__input" error label={formRegErrors.group} type="text" name = "email" onChange={ChangeDate}/>}
 
                         {formErrors.email.length === 0 ? <TextField className = "auth__input" label="Электронная почта*" type="text" name = "email" onChange={ChangeDate}/>
-                        : <TextField className = "auth__input" error label={'sadasd'} type="text" name = "email" onChange={ChangeDate}/>}
+                        : <TextField className = "auth__input" error label={formRegErrors.email} type="text" name = "email" onChange={ChangeDate}/>}
 
-                        {formErrors.email.length === 0 ? <TextField className = "auth__input" label="Пароль*" type="text" name = "password" onChange={ChangeDate}/>
-                        : <TextField className = "auth__input" error label={'sdsa'} type="text" name = "password" onChange={ChangeDate}/>}
+                        {formErrors.password.length === 0 ? <TextField className = "auth__input" label="Пароль*" type="text" name = "password" onChange={ChangeDate}/>
+                        : <TextField className = "auth__input" error label={formRegErrors.password} type="text" name = "password" onChange={ChangeDate}/>}
 
                         <Button className = "auth__submit" variant="contained" color="primary" onClick= {registrationAcc}>Зарегестрироваться</Button>
                         <Link className = "auth__link" to = "/auth" >Уже есть аккаунт?</Link>
