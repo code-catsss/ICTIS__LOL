@@ -45,11 +45,18 @@
         height: 488px;
 
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
 
         h1{
             width: 80%;
+        }
+        li{
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: $fMon;
+            font-size: 28px;
+            font-weight: 400;
         }
     }
     &__more-button{

@@ -7,19 +7,20 @@ const jwtToken = require('jsonwebtoken')
 
 router.post('/registr', 
     [
-        check('email', 'Неккорктный email').isEmail(),
-        check('password', 'Пароль нормально пиши').isLength({min:6})
+        check('email', 'Некорректно введен адрес электронной почты').isEmail(),
+        check('password', 'Длинна пароля должна составлять как минимум 6 знаков.').isLength({min:6})
     ]
 ,
 
 async (req,res) => {
     try {
 
+           
         const errors = validationResult(req)
         if(!errors.isEmpty()){
             return res.status(400).json({
                 errors: errors.array(),
-                message: 'Криво ввёл данные'
+                message: 'Некорректно введены данные'
             })
         }
 
@@ -39,7 +40,7 @@ async (req,res) => {
 
         await user.save()
 
-        res.status(201).json({message: 'Готовый!!!!', isOK: true})
+        res.status(201).json({message: 'Пользователь успешно создан', isOK: true})
     } catch (error) {
         console.log(error)
     }
@@ -55,20 +56,26 @@ router.post('/auth',
 async (req,res) => {
     try {
 
+        const new_form = {
+            email: '',
+            password: ''
+        }
         const errors = validationResult(req)
         if(!errors.isEmpty()){
-            return res.status(400).json({
-                errors: errors.array(),
-                message: 'Криво ввёл данные'
-            })
+            new_form.email = 'Некорректно введен адрес электронной почты'
+            new_form.password = 'Длинна пароля должна составлять как минимум 6 знаков.'
+            return res.status(400).json(new_form)
         }
+
+        
 
         const {email, password} = req.body
 
         const user = await User.findOne({email})
         
         if(!user){
-            return res.status(400).json({message: 'Пользователь не найден'})
+            new_form.email = 'Пользователя с такой электронной формой не существует'
+            return res.status(400).json(new_form)
         }
         
         

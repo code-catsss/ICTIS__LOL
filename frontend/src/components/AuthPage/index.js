@@ -18,11 +18,7 @@ export const Auth = () =>{
     const [formErrors, setFormErrors] = useState({
         email: '',
         password: '',
-        name: ''
     })
-    const [emailvalid, setemailvalid] = useState(true)
-    const [passwordvalid, setpasswordvalid] = useState(true)
-    const [namevalid, setnamevalid] = useState(true)
     const { login } = useContext(AuthContext)
     
     
@@ -32,67 +28,51 @@ export const Auth = () =>{
     }
 
     const TestAuthForVaalidation = () =>{
-        setemailvalid(true)
-        setpasswordvalid(true)
 
-        if (form.email === '') {
-            setFormErrors({formErrors, email:'Это обязательное поле'})
-            setemailvalid(false) 
+        let error = false
+        const new_form = {
+            email: '',
+            password: ''
         }
-        if (form.password === '') {
-         
-         setFormErrors({...formErrors, password:'Это обязательное поле'})
-         setpasswordvalid(false) 
+
+        if(form.email.length === 0) {
+            error = true
+            new_form.email = 'Это обязательное поле'
         }
-        if(!form.email.includes("@") && form.email != ''){//Накидать ещё проверок
-            setemailvalid(false) 
-            setFormErrors({...formErrors, email:'Неправельный формат введённой почты'})
+        if(form.password.length === 0) {
+            error = true
+            new_form.password = 'Это обязательное поле'
         }
-        if(form.password.length < 6 && form.password.length > 0){
-            setpasswordvalid(false) 
-            setFormErrors({...formErrors, password:'Минимальная длинна пароля: 6 знаков'})
-        }
+
+        setFormErrors(new_form)
+        if (error) return false
+        else return true
         
+
     }
 
     const TestResgisterForVaalidation = () =>{
-        setemailvalid(true)
-        setpasswordvalid(true)
-        setemailvalid(true)
-
-        if (form.email === '') {
-            setemailvalid(false) 
-            setFormErrors({...formErrors, email:'Это обязательное поле'})
-        }
-        if (form.password === '') {
-         setpasswordvalid(false) 
-         setFormErrors({...formErrors, password:'Это обязательное поле'})
-        }
-        if (form.name === '') {
-            setnamevalid(false) 
-            setFormErrors({...formErrors, name:'Это обязательное поле'})
-           }
-        if(!form.email.includes("@") && form.email != ''){//Накидать ещё проверок
-            setemailvalid(false) 
-            setFormErrors({...formErrors, email:'Неправельный формат введённой почты'})
-        }
-        if(form.password.length < 6 && form.password.length > 0){
-            setpasswordvalid(false) 
-            setFormErrors({...formErrors, password:'Минимальная длинна пароля: 6 знаков'})
-        }
         
     }
 
     const LogHandler = async () => {
         try {
-            TestAuthForVaalidation()
 
-            if(setemailvalid === false || setpasswordvalid === false){return}
+            const check = TestAuthForVaalidation()
+            if(!check) return
+
+            console.log(formErrors)
 
 
             await axios.post('/api/auth/auth', {...form}, {
                 headers: {
                     'Content-Type': 'application/json'
+                }
+            })
+            .catch(error =>{
+                if (error.response.status === 400) {
+                    console.log(error.response.data)
+                    setFormErrors(error.response.data)   
                 }
             })
             .then(response => {
@@ -104,9 +84,8 @@ export const Auth = () =>{
     }
 
     
-    const RegisterDate = async () => {
+    const registrationAcc = async () => {
         TestResgisterForVaalidation()
-        if(setemailvalid === false || setpasswordvalid === false){return}
         
         try {
             await axios.post('/api/auth/registr', {...form}, {
@@ -141,24 +120,25 @@ export const Auth = () =>{
                         <h1 className = "auth__title">Регистрация</h1>
                         <TextField className = "auth__input" label="ФИО*" type="text" name = "name" autoFocus={true} onChange={ChangeDate} />
                         <TextField className = "auth__input" label="Текущая Кафедра" type="text" name = "kafedr" autoFocus={true} onChange={ChangeDate} />
-                        <TextField className = "auth__input" label="Номер учебной группы" type="text" name = "group" onChange={ChangeDate}/>
+                        <TextField className = "auth__input" label="Учебная группа" type="text" name = "group" onChange={ChangeDate}/>
 
-                        {emailvalid ? <TextField className = "auth__input" label="Электронная почта*" type="text" name = "email" onChange={ChangeDate}/>
-                        : <TextField className = "auth__input" error label={formErrors.email} type="text" name = "email" onChange={ChangeDate}/>}
+                        {formErrors.email.length === 0 ? <TextField className = "auth__input" label="Электронная почта*" type="text" name = "email" onChange={ChangeDate}/>
+                        : <TextField className = "auth__input" error label={'sadasd'} type="text" name = "email" onChange={ChangeDate}/>}
 
-                        {passwordvalid ? <TextField className = "auth__input" label="Пароль*" type="text" name = "password" onChange={ChangeDate}/>
-                        : <TextField className = "auth__input" error label={formErrors.password} type="text" name = "password" onChange={ChangeDate}/>}
+                        {formErrors.email.length === 0 ? <TextField className = "auth__input" label="Пароль*" type="text" name = "password" onChange={ChangeDate}/>
+                        : <TextField className = "auth__input" error label={'sdsa'} type="text" name = "password" onChange={ChangeDate}/>}
 
-                        <Button className = "auth__submit" variant="contained" color="primary" onClick= {RegisterDate}>Зарегестрироваться</Button>
-                        <Link className = "auth__link" to = "/auth" onClick= {()=>{
-                            setemailvalid(true)
-                            setpasswordvalid(true)
-                        }}>Уже есть аккаунт?</Link>
+                        <Button className = "auth__submit" variant="contained" color="primary" onClick= {registrationAcc}>Зарегестрироваться</Button>
+                        <Link className = "auth__link" to = "/auth" >Уже есть аккаунт?</Link>
                         <Link className = "auth__link" to = "/">Вернуться на главную</Link>
                     </div>
                     </div>
                     </React.Fragment>
                     </Route>
+
+
+
+
                     <Route path = "/auth">
                     <div className = "auth container">
 
@@ -167,18 +147,15 @@ export const Auth = () =>{
 
                     <div className = "auth__form">
                         <h1  className = "auth__title">Авторизация</h1>
-                        {emailvalid ? <TextField label="Почта" type="text" name = "email" onChange={ChangeDate}/>
+                        {formErrors.email.length === 0 ? <TextField label="Почта" type="text" name = "email" onChange={ChangeDate}/>
                         : <TextField error label={formErrors.email} type="text" name = "email" onChange={ChangeDate}/>}
                         
-                        {passwordvalid ? <TextField label="Пароль" type="text" name = "password" onChange={ChangeDate}/>
+                        {formErrors.password.length === 0 ? <TextField label="Пароль" type="text" name = "password" onChange={ChangeDate}/>
                         : <TextField error label={formErrors.password} type="text" name = "password" onChange={ChangeDate}/>}
                         
                         
                         <Button variant="contained" color="primary" onClick= {LogHandler}>Авторизироваться</Button>
-                        <Link className = "auth__link" to = "/registr" onClick= {()=>{
-                            setemailvalid(true)
-                            setpasswordvalid(true)
-                        }}>В первые на этом портале?</Link>
+                        <Link className = "auth__link" to = "/registr">В первые на этом портале?</Link>
                         <Link className = "auth__link" to = "/">Вернуться на главную</Link>
                     </div>
                     </div>

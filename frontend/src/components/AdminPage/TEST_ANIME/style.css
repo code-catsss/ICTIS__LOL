@@ -8,6 +8,7 @@
     margin: 1%;
 }
 .teg_quest{
+    padding: 20px;
     text-align: center;
     align-self: center;
     border: 5px solid black;
@@ -29,10 +30,10 @@
 }
 
 .teg_quest_no_nextx{
-    text-align: center;
+    text-align: right;
     align-self: center;
     border: 5px solid black;
-    padding: 10px;
+    padding: 20px;
     width: 65%;
     border-radius: 60%;
     font-size: 200%;

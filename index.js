@@ -29,7 +29,7 @@ async function start(){
         })
 
         app.listen(PORT, ()=> {
-            console.log('СТАРТ ЕБАТЬ');
+            console.log('Сервер запущен');
         })
 
     } catch (error) {

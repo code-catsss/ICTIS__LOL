@@ -108,7 +108,7 @@ export const Test = () =>{
     switch (period) {
         case 'start':
             return(
-                <div>
+                <div className="test">
                     <Header></Header>
                     <div className="mainWrapperStart">
                     <div className="startBlock">
@@ -120,11 +120,11 @@ export const Test = () =>{
             )
         case 'test':
             return(
-                <>
+                <div>
                     <Header></Header>
-                    <div className="mainWrapperStart">
-                        <div className="testBlock">
-                        <div className="interactTest">
+                    <div className="test">
+                        <div className="test__contnet">
+                        <div className="test__interact">
                             <h1>Вопрос №{currentquest.lvl + 1}</h1>
                             <h3>{currentquest.content}</h3>
                             <FormControl component="fieldset">
@@ -146,7 +146,7 @@ export const Test = () =>{
                                 SwitchPeriod()
                             }}>Далее</Button>
                         </div>
-                        <ResponsiveContainer className="ChartTest" width={400} height={400}>
+                        <ResponsiveContainer className="test__chart" width={400} height={400}>
                             <RadarChart  cx={200} cy={200} outerRadius={150} data={userParams}>
                                 <PolarGrid />
                                 
@@ -158,7 +158,7 @@ export const Test = () =>{
                         </div>
                     </div>
                     
-                    </>
+                    </div>
             )
         case 'end':
                 return(
@@ -167,13 +167,6 @@ export const Test = () =>{
                     <div className="mainWrapperStart">
                     <div className="startBlock">
                         <p>Благодарим вас за прохождение данного тестирования. Результаты представленны ниже:
-
-
-
-
-
-
-
 
                             Так же результаты будут доступны во вкладке "Профиль"
                         </p>

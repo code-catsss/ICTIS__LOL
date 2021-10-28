@@ -5,21 +5,6 @@ const router = Router()
 
 function getCurrentBrunch(brunches, que){
     let NewArr = []
-    // const bubub = []
-    // for (let index = 0; index < brunches.length; index++) {
-    //     const sum = brunches[index].map(element => {
-    //         return element.content
-    //     })
-    //     bubub.push(sum)
-    // }
-    // for (let index = 0; index < bubub.length; index++) {
-    //     console.log(bubub[index] + '\n')
-        
-    // }
-    // console.log('\n_____________________________________________')
-    
-
-
     for (let index = 0; index < brunches.length; index++) {
         const ss =  brunches[index][brunches[index].length - 1].answers.length
         
@@ -43,11 +28,11 @@ router.post('/add_question', async (req,res) => {
 
         questoin.save()
 
-        res.status(200).json({message: 'sdsds'})
+        res.status(200).json({message: 'successfully'})
 
     } catch (error) {
         console.log(error)
-        res.status(400).json({message: 'sdsds'})
+        res.status(400).json({message: error})
     }
 })
 
@@ -59,11 +44,11 @@ router.post('/add_bound', async (req,res) => {
             'answers.$.next_question_id': questions[1]._id
         }})
 
-        res.status(200).json({message: 'sdsds'})
+        res.status(200).json({message: 'successfully'})
 
     } catch (error) {
         console.log(error)
-        res.status(400).json({message: 'sdsds'})
+        res.status(400).json({message: error})
     }
 })
 
@@ -75,11 +60,11 @@ router.post('/delete_bound', async (req,res) => {
             'answers.$.next_question_id':'0'
         }})
 
-        res.status(200).json({message: 'sdsds'})
+        res.status(200).json({message: 'successfully'})
 
     } catch (error) {
         console.log(error)
-        res.status(400).json({message: 'sdsds'})
+        res.status(400).json({message: error})
     }
 })
 
@@ -94,34 +79,22 @@ router.get('/get_all', async (req,res) => {
         let brunches = []
         
         for (let index = 0; index < getBrunches.length; index++) {
-            
             let checks = []
             checks = getCurrentBrunch(brunches, getBrunches[index])
-            // console.log(await checks)
-             
             for (let i_s = 0; i_s < checks.length; i_s++) {
-
                 if(checks[i_s] != undefined) await brunches.splice(brunches.indexOf(checks[i_s]), 1)
-                 
              }              
-
             for (let index2 = 0; index2 < getBrunches[index].answers.length; index2++) {
-                
                 if(getBrunches[index].lvl !== 0){
                     for (let index3 = 0; index3 < checks.length; index3++) {
-                        
                         if(checks[index3] != undefined ){
                             let newBrunch = await JSON.parse(JSON.stringify(checks[index3]))
-                            
                             let newQuest = await JSON.parse(JSON.stringify(getBrunches[index]))
                             for (let Lol= 0; Lol < newQuest.answers.length; Lol++) {
                                 if (newQuest.answers[Lol].next_question_id != getBrunches[index].answers[index2].next_question_id){
                                     newQuest.answers[Lol].next_question_id = await 'no'
-                                }
-                            
+                                }    
                         }
-    
-                        // console.log(newQuest)
                         if(newBrunch != undefined)
                             newBrunch.push(newQuest)
     
@@ -131,20 +104,6 @@ router.get('/get_all', async (req,res) => {
     
                     }
                    
-                    
-
-                    // const bubub = []
-                    // for (let index = 0; index < brunches.length; index++) {
-                    // const sum = brunches[index].map(element => {
-                    //      return element.content
-                    // })
-                    // bubub.push(sum)
-                    // }
-                    // for (let index = 0; index < bubub.length; index++) {
-                    //  console.log(bubub[index] + '\n')
-        
-                    // }
-                    //  console.log('\n_____________________________________________')
                     
                 }
                 else{
@@ -165,22 +124,6 @@ router.get('/get_all', async (req,res) => {
                     
                     await brunches.push(newBrunch)
                     
-
-
-
-
-                    // const bubub = []
-                    // for (let index = 0; index < brunches.length; index++) {
-                    // const sum = brunches[index].map(element => {
-                    //      return element.content
-                    // })
-                    // bubub.push(sum)
-                    // }
-                    // for (let index = 0; index < bubub.length; index++) {
-                    //  console.log(bubub[index] + '\n')
-        
-                    // }
-                    //  console.log('\n_____________________________________________')
                 }
                 
                 
