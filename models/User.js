@@ -7,6 +7,7 @@ const schema_u = new Schema({
     kafedr: {type: String, required: true},
     group: {type: String, required: true},
     role: {type: Number, required: true, default: 0},
+    directions: [],
     isLiked: []
 })
 

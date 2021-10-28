@@ -26,8 +26,7 @@ export const useRoutes = (isLogin, isInAdmin) => {
                 <Redirect from= "/home" to="/auth"/>
                 <Redirect from= "/profile" to="/auth"/>
                 <Redirect from= "/test" to="/auth"/>
-                
-                
+                <Redirect from= "/directions" to="/auth"/>
                 
             </Switch>
         )

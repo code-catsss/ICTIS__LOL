@@ -14,7 +14,7 @@ import { IconButton, Menu, MenuItem } from '@material-ui/core';
 
 
 export const Header = () =>{
-    const {login,logout, rolek} = useContext(AuthContext)
+    const {isLogin,login,logout, rolek} = useContext(AuthContext)
     const [menu, setmenu] = useState(null)
         return(
             <header className="header container">
@@ -43,12 +43,14 @@ export const Header = () =>{
                             <button>Главная</button>
                         </Link>
                     {rolek === 1 ? <Link to="/admin/users" className="header__button"><button >Админ</button></Link>: null}
-                    {login ? <div className="header__button"><button  onClick = {logout}>Выйти</button></div> : null}
+                    {isLogin ? <div className="header__button"><button  onClick = {logout}>Выйти</button></div> : null}
                     </div>
-
                     <IconButton className="header__button-mobile" onClick={(event) => setmenu(event.currentTarget)} size="large" aria-controls="fade-menu" aria-haspopup="true">
                         <MenuIcon />
                     </IconButton>
+
+                    {isLogin ? 
+                    
                     <Menu
                         keepMounted
                         open={Boolean(menu)}
@@ -56,7 +58,7 @@ export const Header = () =>{
                         onClose={() => setmenu(null)}
                     >
                         <MenuItem>
-                        <Link to="directions" className="header__button">
+                        <Link to="/directions" className="header__button">
                             Направления
                         </Link>
                         </MenuItem>
@@ -76,9 +78,20 @@ export const Header = () =>{
                         </Link>
                         </MenuItem>
                         {rolek === 1 ? <MenuItem><Link to="/admin/users" className="header__button">Админ</Link></MenuItem>: null}
-                        {login ? <MenuItem onClick = {logout}>Выйти</MenuItem> : null}
+                        {isLogin ? <MenuItem onClick = {logout}>Выйти</MenuItem> : null}
                      </Menu>
-
+                    :
+                     <Menu
+                        keepMounted
+                        open={Boolean(menu)}
+                        anchorEl={menu}
+                        onClose={() => setmenu(null)}
+                     >
+                    <Link to = "/" className="header__button">
+                            Главная страница
+                    </Link>
+                     </Menu>
+                    }
             </header>
         )
 }

@@ -129,13 +129,24 @@ export const  MainScreen = () =>{
 
 
                 <div className= 'landing__footer'>
-                    <p>Центр тестирования
-                        Конфиденциальность</p>
-                    <p>Текст от балды
-                        Второй текст от балды.</p>
-                    <p>Во дворе трава
-                       На траве дрова</p>
-                    <h1>8(800)-555-35-35</h1>
+                <p className="footer__anchor">
+                    Официальный сайт ИКТИБ:
+                    <br/>
+                    http://ictis.sfedu.ru
+                </p>
+                <p className="footer__anchor">
+                    Ссылка на GitHub проекта:
+                    <br/>
+                    https://github.com/code-catsss/ICTIS__LOL
+                </p>
+                <p className="footer__anchor">
+                    Во дворе трава
+                    <br/>
+                    На траве дрова
+                </p>
+                <h1 className="footer__anchor">
+                    8(908)-179-35-83
+                </h1>
                 </div>
 
             </div>

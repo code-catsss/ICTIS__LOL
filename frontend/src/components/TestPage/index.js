@@ -1,13 +1,14 @@
 import { Button, FormControl, FormLabel, RadioGroup,Radio, FormControlLabel } from "@material-ui/core";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { Header } from "../Header"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from '../../context/AuthContext'
 
 
 export const Test = () =>{
+    const {userId} = useContext(AuthContext)
 
     const [currentquest,setCurrentquest ] = useState({
         content: '',
@@ -19,24 +20,24 @@ export const Test = () =>{
     const [userParams, setUserParams] = useState([
         { 
             name: "01.04.02",
-            value: 0.5
+            value: 0
     
         },
         { 
             name: '09.04.01',
-            value: 0.5
+            value: 0
         },
         { 
             name: '09.04.03',
-            value: 0.5
+            value: 0
         },
         { 
             name: '09.04.04',
-            value: 0.5
+            value: 0
         },
         {
             name: '27.04.03',
-            value: 0.5
+            value: 0
     
         },
     ])
@@ -57,6 +58,22 @@ export const Test = () =>{
         }
         console.log(newParams)
         setUserParams(newParams)
+    }
+
+    const updateUser = async () => {
+        try {
+            await axios.post('/api/test/finish_test', {userId, userParams}, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then((response) => {
+                console.log(response)
+            }
+            )
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const SwitchPeriod = () => {
@@ -108,10 +125,10 @@ export const Test = () =>{
     switch (period) {
         case 'start':
             return(
-                <div className="test">
+                <div>
                     <Header></Header>
-                    <div className="mainWrapperStart">
-                    <div className="startBlock">
+                    <div className="test">
+                    <div className="test__block">
                         <p>Данное тестирование даст вам рекомендацию к определению подходящего вам направления магистратуры. Но выбор в любом случае всегда за вами.</p>
                         <Button onClick={SwitchPeriod}>Начать</Button>
                     </div>
@@ -164,13 +181,13 @@ export const Test = () =>{
                 return(
                     <div>
                     <Header></Header>
-                    <div className="mainWrapperStart">
+                    <div className="test">
                     <div className="startBlock">
                         <p>Благодарим вас за прохождение данного тестирования. Результаты представленны ниже:
 
                             Так же результаты будут доступны во вкладке "Профиль"
                         </p>
-                        <Link to="/profile"><Button>Завершить</Button></Link>
+                        <Link to="/profile"><Button onClick={updateUser}>Завершить</Button></Link>
                     </div>
                     </div>
                 </div>

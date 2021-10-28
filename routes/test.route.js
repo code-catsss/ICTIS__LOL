@@ -1,5 +1,6 @@
 const {Router} = require('express')
 const Question = require('../models/Questoin')
+const User = require('../models/User')
 
 const router = Router()
 
@@ -19,6 +20,23 @@ function getCurrentBrunch(brunches, que){
     
     return NewArr
 }
+
+router.post('/finish_test', async (req, res) => {
+    try {
+        const {userId,userParams} = req.body
+
+        console.log(userParams)
+
+        await User.updateOne({_id:userId }, {$set: {
+            directions: userParams
+        }})
+
+        res.status(200).json({message: 'successfully'})
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 router.post('/add_question', async (req,res) => {
     try {

@@ -8,19 +8,22 @@ export const Footer =  () => {
 
             <div className="footer__anchors">
                 <p className="footer__anchor">
-                    Центр тестирования
-                    Конфиденциальность
+                    Официальный сайт ИКТИБ:
+                    <br/>
+                    http://ictis.sfedu.ru
                 </p>
                 <p className="footer__anchor">
-                    Текст от балды
-                    Второй текст от балды.
+                    Ссылка на GitHub проекта:
+                    <br/>
+                    https://github.com/code-catsss/ICTIS__LOL
                 </p>
                 <p className="footer__anchor">
                     Во дворе трава
+                    <br/>
                     На траве дрова
                 </p>
                 <h1 className="footer__anchor">
-                    8(800)-555-35-35
+                    8(908)-179-35-83
                 </h1>
             </div>
         </div>

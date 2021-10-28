@@ -1,6 +1,10 @@
  .profile{
     background: #FAF6EF;
 
+    &__un{
+        text-decoration: underline;
+    }
+
     &__main{
         padding-top: 60px;
         padding-right: 114px;
@@ -50,6 +54,14 @@
 
         h1{
             width: 80%;
+        }
+        p{
+            padding-left: 30px;
+            padding-right: 30px;
+            align-self: center;
+            font-family: $fMon;
+            font-size: 28px;
+            font-weight: 400;
         }
         li{
             padding-left: 20px;
