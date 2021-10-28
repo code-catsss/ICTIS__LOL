@@ -96,39 +96,6 @@ export const Home = () =>{
                         }
                         </div>
                     
-
-                    <div className = "SubMenuBlock">
-                        <h3>Рассширенный поиск:</h3>
-                        <Accordion>
-                            <AccordionSummary>
-                                Фильтры
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <RadioGroup aria-label="gender" name="gender1">
-                            <FormControlLabel value="female" control={<Radio />} label="По популярности" />
-                            <FormControlLabel value="male" control={<Radio />} label="По рейтингу" />
-                            <FormControlLabel value="other" control={<Radio />} label="По дате" />
-                            </RadioGroup>
-                            
-                            </AccordionDetails>
-                        </Accordion>
-                        {/* <h4>Сортировка:</h4> */}
-                        <Accordion>
-                            <AccordionSummary>
-                                Сортировка
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <RadioGroup aria-label="gender" name="gender1">
-                            <FormControlLabel value="female" control={<Radio />} label="По популярности" />
-                            <FormControlLabel value="male" control={<Radio />} label="По рейтингу" />
-                            <FormControlLabel value="other" control={<Radio />} label="По дате" />
-                            </RadioGroup>
-                            
-                            </AccordionDetails>
-                        </Accordion>
-                        
-
-                    </div>
                     </div>
                 </div>
 

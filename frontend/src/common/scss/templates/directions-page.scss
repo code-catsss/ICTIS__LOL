@@ -63,4 +63,25 @@
       text-align: center;
     }
   }
+  @include mobile-only{
+    ul{
+      li{
+        font-size: 17px;
+      }
+    }
+    &__label{
+      width: 100%;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 30px;
+    }
+    &__text{
+      h1{
+        display: none;
+      }
+    }
+    &__img{
+      display: none;
+    }
+  }
 }

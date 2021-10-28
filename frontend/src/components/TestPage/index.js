@@ -5,6 +5,7 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../context/AuthContext'
+import { Footer } from "../Footer";
 
 
 export const Test = () =>{
@@ -133,6 +134,7 @@ export const Test = () =>{
                         <Button onClick={SwitchPeriod}>Начать</Button>
                     </div>
                     </div>
+                    <Footer></Footer>
                 </div>
             )
         case 'test':
@@ -163,7 +165,7 @@ export const Test = () =>{
                                 SwitchPeriod()
                             }}>Далее</Button>
                         </div>
-                        <ResponsiveContainer className="test__chart" width={400} height={400}>
+                        <ResponsiveContainer className="test__chart" width={350} height={350}>
                             <RadarChart  cx={200} cy={200} outerRadius={150} data={userParams}>
                                 <PolarGrid />
                                 
@@ -174,7 +176,7 @@ export const Test = () =>{
 
                         </div>
                     </div>
-                    
+                    <Footer></Footer>
                     </div>
             )
         case 'end':
@@ -182,14 +184,13 @@ export const Test = () =>{
                     <div>
                     <Header></Header>
                     <div className="test">
-                    <div className="startBlock">
-                        <p>Благодарим вас за прохождение данного тестирования. Результаты представленны ниже:
-
-                            Так же результаты будут доступны во вкладке "Профиль"
+                    <div  className="test__block">
+                        <p>Благодарим вас за прохождение данного тестирования. Результаты будут доступны во вкладке "Профиль".
                         </p>
                         <Link to="/profile"><Button onClick={updateUser}>Завершить</Button></Link>
                     </div>
                     </div>
+                    <Footer></Footer>
                 </div>
                 )
         default:
