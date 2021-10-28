@@ -32,6 +32,7 @@ export const Auth = () =>{
     
     const ChangeDate = (event) => {
         setForm({...form, [event.target.name]: event.target.value})
+        setFormRegErrors({...formRegErrors, [event.target.name]: ''})
 
     }
 
@@ -160,18 +161,18 @@ export const Auth = () =>{
                         <h1 className = "auth__title">Регистрация</h1>
 
                         {formRegErrors.name.length === 0 ? <TextField className = "auth__input" label="ФИО*" type="text" name = "name" autoFocus={true} onChange={ChangeDate} />
-                        : <TextField className = "auth__input" error label={formRegErrors.name} type="text" name = "email" onChange={ChangeDate}/>}
+                        : <TextField className = "auth__input" error label={formRegErrors.name} type="text" name = "name" onChange={ChangeDate}/>}
 
-                        {formErrors.kafedr.length === 0 ? <TextField className = "auth__input" label="Текущая Кафедра*" type="text" name = "kafedr" autoFocus={true} onChange={ChangeDate} />
-                        : <TextField className = "auth__input" error label={formRegErrors.kafedr} type="text" name = "email" onChange={ChangeDate}/>}
+                        {formRegErrors.kafedr.length === 0 ? <TextField className = "auth__input" label="Текущая Кафедра*" type="text" name = "kafedr" autoFocus={true} onChange={ChangeDate} />
+                        : <TextField className = "auth__input" error label={formRegErrors.kafedr} type="text" name = "kafedr" onChange={ChangeDate}/>}
 
-                        {formErrors.group.length === 0 ? <TextField className = "auth__input" label="Учебная группа*" type="text" name = "group" onChange={ChangeDate}/>
-                        : <TextField className = "auth__input" error label={formRegErrors.group} type="text" name = "email" onChange={ChangeDate}/>}
+                        {formRegErrors.group.length === 0 ? <TextField className = "auth__input" label="Учебная группа*" type="text" name = "group" onChange={ChangeDate}/>
+                        : <TextField className = "auth__input" error label={formRegErrors.group} type="text" name = "group" onChange={ChangeDate}/>}
 
-                        {formErrors.email.length === 0 ? <TextField className = "auth__input" label="Электронная почта*" type="text" name = "email" onChange={ChangeDate}/>
+                        {formRegErrors.email.length === 0 ? <TextField className = "auth__input" label="Электронная почта*" type="text" name = "email" onChange={ChangeDate}/>
                         : <TextField className = "auth__input" error label={formRegErrors.email} type="text" name = "email" onChange={ChangeDate}/>}
 
-                        {formErrors.password.length === 0 ? <TextField className = "auth__input" label="Пароль*" type="text" name = "password" onChange={ChangeDate}/>
+                        {formRegErrors.password.length === 0 ? <TextField className = "auth__input" label="Пароль*" type="text" name = "password" onChange={ChangeDate}/>
                         : <TextField className = "auth__input" error label={formRegErrors.password} type="text" name = "password" onChange={ChangeDate}/>}
 
                         <Button className = "auth__submit" variant="contained" color="primary" onClick= {registrationAcc}>Зарегестрироваться</Button>
