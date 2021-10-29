@@ -19,27 +19,70 @@ export const Test = () =>{
     const [nextid, setNextid] = useState()
     const [calcans, setcalcans] = useState()
     const [userParams, setUserParams] = useState([
-        { 
-            name: "01.04.02",
-            value: 0
-    
-        },
-        { 
-            name: '09.04.01',
-            value: 0
-        },
-        { 
-            name: '09.04.03',
-            value: 0
-        },
-        { 
-            name: '09.04.04',
-            value: 0
+        {
+            code_name: '01.04.02_1',
+            name: 'Математическое моделирование в инженерных науках',
+            num: 0
         },
         {
-            name: '27.04.03',
-            value: 0
-    
+            code_name: '01.04.02_2',
+            name: 'Прикладная математика для высокопроизводительных вычислительных систем',
+            num: 0
+        },
+        {
+            code_name: '09.04.01_1',
+            name: 'Высокопроизводительные вычислительные системы и квантовая обработка информации',
+            num: 0
+        },
+        {
+            code_name: '09.04.01_2',
+            name: 'Интеллектуальные системы',
+            num: 0
+        },
+        {
+            code_name: '09.04.01_3',
+            name: 'Информационное и программное обеспечение автоматизированных систем',
+            num: 0
+        },
+        {
+            code_name: '09.04.01_4',
+            name: 'Разработка информационных систем и web-приложений',
+            num: 0
+        },
+        {
+            code_name: '09.04.01_5',
+            name: 'Системная интеграция и управление бизнес-процессами',
+            num: 0
+        },
+        {
+            code_name: '09.04.01_6',
+            name: 'IT-management',
+            num: 0
+        },
+        {
+            code_name: '09.04.03_1',
+            name: 'Машинное обучение и технологии больших данных',
+            num: 0
+        },
+        {
+            code_name: '09.04.03_2',
+            name: 'Эгродизайн пользовательского интерфейса',
+            num: 0
+        },
+        {
+            code_name: '09.04.04_1',
+            name: 'Методы и средства разработки программного обеспечения',
+            num: 0
+        },
+        {
+            code_name: '27.04.03_1',
+            name: 'Управление киберфизическими системами',
+            num: 0
+        },
+        {
+            code_name: '09.04.01_5',
+            name: 'Психотехнологии интеллектуально-личностного развития человека',
+            num: 0
         },
     ])
 
@@ -47,14 +90,23 @@ export const Test = () =>{
         const q = currentquest.answers.find(e => e._id === calcans)
         
         let newarr = []
-        newarr.push(q.mag01_04_02)
-        newarr.push(q.mag09_04_01)
-        newarr.push(q.mag09_04_03)
-        newarr.push(q.mag09_04_04)
-        newarr.push(q.mag27_04_03)
+        newarr.push(q.value_1)
+        newarr.push(q.value_2)
+        newarr.push(q.value_3)
+        newarr.push(q.value_4)
+        newarr.push(q.value_5)
+        newarr.push(q.value_6)
+        newarr.push(q.value_7)
+        newarr.push(q.value_8)
+        newarr.push(q.value_9)
+        newarr.push(q.value_10)
+        newarr.push(q.value_11)
+        newarr.push(q.value_12)
+        newarr.push(q.value_13)
+
         let newParams = JSON.parse(JSON.stringify(userParams))
         for (let index = 0; index < userParams.length; index++) {
-            newParams[index].value = newParams[index].value + newarr[index].value
+            newParams[index].num = newParams[index].num + newarr[index].num
             
         }
         console.log(newParams)
@@ -170,7 +222,7 @@ export const Test = () =>{
                                 <PolarGrid />
                                 
                                 <PolarRadiusAxis />
-                                <Radar name="Chel" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                                <Radar name="Chel" dataKey="num" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
                             </RadarChart>
                         </ResponsiveContainer>
 

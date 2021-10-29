@@ -15,28 +15,72 @@ export const TestAX = () => {
     })
     const [answer_form, set_answer_form] = useState({
         content: '',
-        mag01_04_02:{ 
-            name: '01.04.02',
-            value: 0
+        statedirdet: 0,
+        value_1: {
+            code_name: '01.04.02_1',
+            name: 'Математическое моделирование в инженерных науках',
+            num: 0
         },
-        mag09_04_01:{ 
-            name: '09.04.01',
-            value: 0
+        value_2: {
+            code_name: '01.04.02_2',
+            name: 'Прикладная математика для высокопроизводительных вычислительных систем',
+            num: 0
         },
-        mag09_04_03:{ 
-            name: '09.04.03',
-            value: 0
+        value_3: {
+            code_name: '09.04.01_1',
+            name: 'Высокопроизводительные вычислительные системы и квантовая обработка информации',
+            num: 0
         },
-        mag09_04_04:{ 
-            name: '09.04.04',
-            value: 0
+        value_4: {
+            code_name: '09.04.01_2',
+            name: 'Интеллектуальные системы',
+            num: 0
         },
-        mag27_04_03:{
-            name: '27.04.03',
-            value: 0
+        value_5: {
+            code_name: '09.04.01_3',
+            name: 'Информационное и программное обеспечение автоматизированных систем',
+            num: 0
         },
-        statedir: '0',
-        statedirdet: 0
+        value_6: {
+            code_name: '09.04.01_4',
+            name: 'Разработка информационных систем и web-приложений',
+            num: 0
+        },
+        value_7: {
+            code_name: '09.04.01_5',
+            name: 'Системная интеграция и управление бизнес-процессами',
+            num: 0
+        },
+        value_8: {
+            code_name: '09.04.01_6',
+            name: 'IT-management',
+            num: 0
+        },
+        value_9: {
+            code_name: '09.04.03_1',
+            name: 'Машинное обучение и технологии больших данных',
+            num: 0
+        },
+        value_10: {
+            code_name: '09.04.03_2',
+            name: 'Эгродизайн пользовательского интерфейса',
+            num: 0
+        },
+        value_11: {
+            code_name: '09.04.04_1',
+            name: 'Методы и средства разработки программного обеспечения',
+            num: 0
+        },
+        value_12: {
+            code_name: '27.04.03_1',
+            name: 'Управление киберфизическими системами',
+            num: 0
+        },
+        value_13: {
+            code_name: '09.04.01_5',
+            name: 'Психотехнологии интеллектуально-личностного развития человека',
+            num: 0
+        },
 
     })
 
@@ -74,10 +118,7 @@ export const TestAX = () => {
         const chel = JSON.parse(JSON.stringify(form.answers))
         const newList = chel.map((item)=>{
             if(item.content === lel.content ){
-                item[event.target.name].value = parseInt(event.target.value, 10)
-                
-
-                
+                item[event.target.name].num = parseInt(event.target.value, 10)
             }
             console.log(item)
             return item
@@ -113,53 +154,30 @@ export const TestAX = () => {
                     form.answers.map((i)=>(
                         <Accordion >
                             <AccordionSummary>
-                                <TextField onClick={(event) => event.stopPropagation()}
-            onFocus={(event) => event.stopPropagation()} value={i.content}></TextField>
-                                <Button variant="contained" color="secondary" onClick={() => {
+                            <TextField name='content' onClick={(event) => event.stopPropagation()} onFocus={(event) => event.stopPropagation()} onChange={(e) => ChangeDataAnswerinQuestion(e, i)} value={i.content}></TextField>
+                                {/* <Button variant="contained" color="secondary" onClick={() => {
                                     let newa = form.answers
                                     newa.splice(newa.indexOf(i), 1)
                                     setform({...form, answers: newa})
-                                }}>Удалить</Button>
-                                
-                                <Switch label="lol" onChange={()=>{
-                                    if (form.answers[form.answers.indexOf(i)].statedir === i._id) {
-                                        const chel = JSON.parse(JSON.stringify(form.answers))
-                                        chel[form.answers.indexOf(i)].statedir = '0'
-                                        setform({...form, answers: chel})
-                                    }
-                                    else if(form.answers[form.answers.indexOf(i)].statedir === '0'){
-                                        const chel = JSON.parse(JSON.stringify(form.answers))
-                                        chel[form.answers.indexOf(i)].statedir = i._id
-                                        setform({...form, answers: chel})
-                                    }
-                                }
-                                } onClick={(event) => event.stopPropagation()} name="checkedA" color="primary" name="checkedB"/>
+                                }}>Удалить</Button> */}
                             </AccordionSummary>
                             <AccordionDetails>
-                                {form.answers[form.answers.indexOf(i)].statedir === i._id ? <><Tabs variant="scrollable"
-          scrollButtons="auto" value={form.answers[form.answers.indexOf(i)].statedirdet} onChange={(e, nw)=>{
-                                    const chel = JSON.parse(JSON.stringify(form.answers))
-                                    chel[form.answers.indexOf(i)].statedirdet = nw
-                                    setform({...form, answers: chel})
-                                }} indicatorColor="primary" textColor="primary">
-                                    <Tab label={i.mag01_04_02.name}></Tab>
-                                    <Tab label={i.mag09_04_01.name}></Tab>
-                                    <Tab label={i.mag09_04_03.name}></Tab>
-                                    <Tab label={i.mag09_04_04.name}></Tab>
-                                    <Tab label={i.mag27_04_03.name}></Tab>
-                                </Tabs>
-                                <hr />
-                                <p>
-                                    Похуй
-                                </p>
-                                </> 
-                                : <div>
-                                    <TextField name='mag01_04_02' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.mag01_04_02.name} defaultValue={i.mag01_04_02.value}></TextField>
-                                <TextField name='mag09_04_01' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.mag09_04_01.name} defaultValue={i.mag09_04_01.value}></TextField>
-                                <TextField name='mag09_04_03' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.mag09_04_03.name} defaultValue={i.mag09_04_03.value}></TextField>
-                                <TextField name='mag09_04_04' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.mag09_04_04.name} defaultValue={i.mag09_04_04.value}></TextField>
-                                <TextField name='mag27_04_03' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.mag27_04_03.name} defaultValue={i.mag27_04_03.value}></TextField>
-                                </div> }
+                                <div>
+                                <TextField name='value_1' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_1.code_name} defaultValue={i.value_1.num}></TextField>
+                                <TextField name='value_2' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_2.code_name} defaultValue={i.value_2.num}></TextField>
+                                <TextField name='value_3' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_3.code_name} defaultValue={i.value_3.num}></TextField>
+                                <TextField name='value_4' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_4.code_name} defaultValue={i.value_4.num}></TextField>
+                                <TextField name='value_5' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_5.code_name} defaultValue={i.value_5.num}></TextField>
+                                <TextField name='value_6' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_6.code_name} defaultValue={i.value_6.num}></TextField>
+                                <TextField name='value_7' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_7.code_name} defaultValue={i.value_7.num}></TextField>
+                                <TextField name='value_8' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_8.code_name} defaultValue={i.value_8.num}></TextField>
+                                <TextField name='value_9' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_9.code_name} defaultValue={i.value_9.num}></TextField>
+                                <TextField name='value_10' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_10.code_name} defaultValue={i.value_10.num}></TextField>
+                                <TextField name='value_11' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_11.code_name} defaultValue={i.value_11.num}></TextField>
+                                <TextField name='value_12' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_12.code_name} defaultValue={i.value_12.num}></TextField>
+                                <TextField name='value_13' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_13.code_name} defaultValue={i.value_13.num}></TextField>
+                                </div>
+                            
                             
                             </AccordionDetails>
                         </Accordion>
