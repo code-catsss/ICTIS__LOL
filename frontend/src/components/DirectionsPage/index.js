@@ -44,7 +44,7 @@ return(
 
                                    <Link to={'/direction/'+ direction._id}>
                                        <li>
-                                               {direction.code+' '+direction.name}
+                                               {direction.program}
                                        </li>
                                    </Link>
                                     )

@@ -1,6 +1,5 @@
 import {Header} from '../../Header'
 import { Footer } from '../../Footer'
-import './style.scss'
 import React, {useEffect, useState} from "react";
 import arrow from './arrow.png'
 import axios from 'axios'
@@ -37,7 +36,7 @@ export const DirectionsDetail=()=>{
                 <div className="inline inline_dark"></div>
 
                 <div className="direction__name">
-                    <h1>{Direction.code+' '+Direction.name}</h1>
+                    <h1>{Direction.program}</h1>
                 </div>
 
                 <div className="direction__table">
@@ -72,8 +71,11 @@ export const DirectionsDetail=()=>{
                         </tr>
                         </tbody>
                     </table>
-                </div>
 
+                
+
+                </div>
+                <h1 className="direction__text"> Ключевые области исследований:<br/>{Direction.ruprose}</h1>
                 <Link className="direction__toBack" to="/directions">
                     <div className="back-button">
                         <img src={arrow}/>
