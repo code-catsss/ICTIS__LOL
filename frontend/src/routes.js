@@ -45,7 +45,7 @@ export const useRoutes = (isLogin, isInAdmin) => {
                     <Route path = "/news/:id" component = {NewsDetail}></Route>
                     <Route path ="/directions" component={Directions}></Route>
                     <Route path ="/direction/:id" component={DirectionsDetail}></Route>
-                    <Redirect to="/home"/>
+                    <Redirect to="/directions"/>
                     
     
                 </Switch>

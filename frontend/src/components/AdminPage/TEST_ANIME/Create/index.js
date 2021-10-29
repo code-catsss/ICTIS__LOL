@@ -162,6 +162,7 @@ export const TestAX = () => {
                                 }}>Удалить</Button> */}
                             </AccordionSummary>
                             <AccordionDetails>
+                                <div>
                                 <TextField name='value_1' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_1.code_name} defaultValue={i.value_1.num}></TextField>
                                 <TextField name='value_2' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_2.code_name} defaultValue={i.value_2.num}></TextField>
                                 <TextField name='value_3' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_3.code_name} defaultValue={i.value_3.num}></TextField>
@@ -175,7 +176,7 @@ export const TestAX = () => {
                                 <TextField name='value_11' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_11.code_name} defaultValue={i.value_11.num}></TextField>
                                 <TextField name='value_12' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_12.code_name} defaultValue={i.value_12.num}></TextField>
                                 <TextField name='value_13' onChange={(e) => ChangeDataAnswerinQuestion(e, i)} label={i.value_13.code_name} defaultValue={i.value_13.num}></TextField>
-
+                                </div>
                             
                             
                             </AccordionDetails>

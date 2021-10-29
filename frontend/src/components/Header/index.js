@@ -38,10 +38,10 @@ export const Header = () =>{
                             <img src={profile} alt="" />
                             <button>Личный кабинет</button>
                         </Link>
-                        <Link to = "/home" className="header__button">
+                        <a href = "http://ictis.sfedu.ru" className="header__button">
                             <img src={home} alt="" />
-                            <button>Главная</button>
-                        </Link>
+                            <button>ИКТИБ</button>
+                        </a>
                     {rolek === 1 ? <Link to="/admin/users" className="header__button"><button >Админ</button></Link>: null}
                     {isLogin ? <div className="header__button"><button  onClick = {logout}>Выйти</button></div> : null}
                     </div>
