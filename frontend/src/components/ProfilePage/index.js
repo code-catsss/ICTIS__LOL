@@ -116,7 +116,7 @@ export const Profile = () =>{
                                 {
                                     profileData.directions.length !== 0 ?
                                     profileData.directions.map((i) => (
-                                        <li className= {profileData.directions.indexOf(i) < 3 ? "profile__un":null}>{i.name} - {i.title}</li>
+                                        <li className= {profileData.directions.indexOf(i) < 3 ? "profile__un":null}>{i.name}</li>
                                     ))
                                     :
                                     <p>
