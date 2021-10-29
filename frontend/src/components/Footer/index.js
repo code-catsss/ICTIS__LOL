@@ -23,7 +23,7 @@ export const Footer =  () => {
                     https://sfedu.ru
                 </p>
                 <h1 className="footer__anchor">
-                    8(908)-179-35-83
+                    8(908)-179-35-84
                 </h1>
             </div>
         </div>
