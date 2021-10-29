@@ -140,9 +140,9 @@ export const  MainScreen = () =>{
                     https://github.com/code-catsss/ICTIS__LOL
                 </p>
                 <p className="footer__anchor">
-                    Во дворе трава
+                    Официальный сайт ЮФУ:
                     <br/>
-                    На траве дрова
+                    https://sfedu.ru
                 </p>
                 <h1 className="footer__anchor">
                     8(908)-179-35-83
