@@ -180,11 +180,20 @@ export const TestAXM = () => {
                                         ix.answers.map((ixa) => (
                                             <Tooltip arrow title={
                                                 <div>
-                                                    <h4>{ixa.mag01_04_02.name}: {ixa.mag01_04_02.value}</h4>
-                                                    <h4>{ixa.mag09_04_01.name}: {ixa.mag09_04_01.value}</h4>
-                                                    <h4>{ixa.mag09_04_03.name}: {ixa.mag09_04_03.value}</h4>
-                                                    <h4>{ixa.mag09_04_04.name}: {ixa.mag09_04_04.value}</h4>
-                                                    <h4>{ixa.mag27_04_03.name}: {ixa.mag27_04_03.value}</h4>
+                                                    <h4>{ixa.value_1.code_name}: {ixa.value_1.num}</h4>
+                                                    <h4>{ixa.value_2.code_name}: {ixa.value_2.num}</h4>
+                                                    <h4>{ixa.value_3.code_name}: {ixa.value_3.num}</h4>
+                                                    <h4>{ixa.value_4.code_name}: {ixa.value_4.num}</h4>
+                                                    <h4>{ixa.value_5.code_name}: {ixa.value_5.num}</h4>
+                                                    <h4>{ixa.value_6.code_name}: {ixa.value_6.num}</h4>
+                                                    <h4>{ixa.value_7.code_name}: {ixa.value_7.num}</h4>
+                                                    <h4>{ixa.value_8.code_name}: {ixa.value_8.num}</h4>
+                                                    <h4>{ixa.value_9.code_name}: {ixa.value_9.num}</h4>
+                                                    <h4>{ixa.value_10.code_name}: {ixa.value_10.num}</h4>
+                                                    <h4>{ixa.value_11.code_name}: {ixa.value_11.num}</h4>
+                                                    <h4>{ixa.value_12.code_name}: {ixa.value_12.num}</h4>
+                                                    <h4>{ixa.value_13.code_name}: {ixa.value_13.num}</h4>
+                                                    
                                                 </div>
                                             } placement="right">
                                                 <h3>{ixa.next_question_id != 0 ? "✅": "🅾"}{ixa.content}</h3>

@@ -41,12 +41,11 @@ export const Profile = () =>{
                     }   
                 }
             }
-            directions.sort((a, b) => a.value < b.value ? 1 : -1);
             setprofileData({
                 name: direct.name,
                 group: direct.group,
                 kafedra: direct.kafedr,
-                directions: directions
+                directions: directions,
             })
             console.log(directions)
         })
@@ -138,10 +137,10 @@ export const Profile = () =>{
                     <div className= "profile__chart">
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart height={400} data={profileData.directions}>
-                            <Tooltip content="title"/>
+                            <Tooltip content="name"/>
                             <XAxis dataKey="name" />
                             <YAxis />
-                            <Bar dataKey="value" fill="#8884d8" />
+                            <Bar dataKey="num" fill="#8884d8" />
                         </BarChart>
                     </ResponsiveContainer>
                     </div>
